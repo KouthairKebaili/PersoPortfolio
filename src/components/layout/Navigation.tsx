@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { NavigationItem } from '@/types/portfolio';
+import type { NavigationItem } from '@/types/portfolio';
 
 const Navigation: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
