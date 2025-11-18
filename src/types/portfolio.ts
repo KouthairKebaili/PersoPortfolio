@@ -52,7 +52,7 @@ export interface ButtonProps {
   variant?: 'primary' | 'secondary' | 'gradient' | 'outline';
   size?: 'sm' | 'md' | 'lg' | 'xl';
   href?: string;
-  onClick?: () => void;
+  onClick?: (e?: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => void;
   disabled?: boolean;
   className?: string;
   target?: '_blank' | '_self';
