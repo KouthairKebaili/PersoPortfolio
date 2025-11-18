@@ -107,19 +107,14 @@ const FeaturedWork: React.FC<FeaturedWorkProps> = ({ className = '', id = 'featu
         ${className}
       `}
     >
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5 dark:opacity-10">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(102,126,234,0.2)_0%,transparent_50%)]" />
-      </div>
-
       <div className="relative max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
         {/* Section Header */}
-        <div className="text-center mb-16 sm:mb-20 lg:mb-24">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-900 dark:text-white mb-6">
-            Featured Work
+        <div className="text-center mb-16 sm:mb-20">
+          <h2 className="text-headline font-black text-neutral-900 dark:text-white mb-6">
+            Selected Projects
           </h2>
-          <p className="text-lg sm:text-xl text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto">
-            Showcasing SaaS and dashboard projects that deliver measurable business impact through thoughtful design.
+          <p className="text-body text-neutral-600 dark:text-neutral-400 max-w-3xl mx-auto">
+            A showcase of product design work across e-commerce, sustainable energy, and fintech that demonstrates measurable impact and scalable design solutions.
           </p>
         </div>
 
