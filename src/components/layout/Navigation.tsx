@@ -60,9 +60,9 @@ const Navigation: React.FC = () => {
       <nav
         className={`
           fixed top-0 left-0 right-0 z-50
-          transition-all duration-300
+          transition-all duration-200
           ${scrolled
-            ? 'glass-effect shadow-apple py-3'
+            ? 'bg-white/80 dark:bg-black/80 backdrop-blur-md border-b border-neutral-200/50 dark:border-neutral-800/50 py-4'
             : 'bg-transparent py-6'
           }
         `}
@@ -72,26 +72,26 @@ const Navigation: React.FC = () => {
             {/* Logo/Name */}
             <a
               href="#hero"
-              className="text-xl font-bold gradient-text hover:opacity-80 transition-opacity"
+              className="text-lg font-black text-neutral-900 dark:text-white hover:opacity-80 transition-opacity"
               onClick={(e) => {
                 e.preventDefault();
                 scrollToSection('#hero');
               }}
             >
-              Product Designer
+              K. Kebaili
             </a>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-8">
+            <div className="hidden md:flex items-center gap-8">
               {navigationItems.map((item) => (
                 <a
                   key={item.id}
                   href={item.href}
                   className={`
-                    relative text-sm font-medium transition-colors
-                    hover:text-purple-600 dark:hover:text-purple-400
+                    relative text-sm font-medium transition-all duration-200
+                    hover:text-accent dark:hover:text-accent-light
                     ${activeSection === item.id
-                      ? 'text-purple-600 dark:text-purple-400'
+                      ? 'text-accent dark:text-accent-light font-semibold'
                       : 'text-neutral-600 dark:text-neutral-400'
                     }
                   `}
@@ -102,15 +102,31 @@ const Navigation: React.FC = () => {
                 >
                   {item.label}
                   {activeSection === item.id && (
-                    <span className="absolute -bottom-2 left-0 right-0 h-0.5 bg-purple-600 dark:bg-purple-400 rounded-full" />
+                    <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-accent dark:bg-accent-light rounded-full" />
                   )}
                 </a>
               ))}
             </div>
 
+            {/* Contact Button */}
+            <div className="hidden md:block">
+              <Button
+                variant="primary"
+                size="sm"
+                href="#contact-cta"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection('#contact-cta');
+                }}
+                className="font-medium"
+              >
+                Get in touch
+              </Button>
+            </div>
+
             {/* Mobile Menu Button */}
             <button
-              className="md:hidden relative w-6 h-6 flex flex-col justify-center items-center group"
+              className="md:hidden relative w-6 h-6 flex flex-col justify-center items-center text-neutral-900 dark:text-white"
               onClick={toggleMenu}
               aria-label="Toggle navigation menu"
               aria-expanded={isOpen}
@@ -153,7 +169,7 @@ const Navigation: React.FC = () => {
             <div className="flex flex-col h-full">
               {/* Mobile Menu Header */}
               <div className="flex items-center justify-between p-6 border-b border-neutral-200 dark:border-neutral-800">
-                <span className="text-xl font-bold gradient-text">Menu</span>
+                <span className="text-xl font-black text-neutral-900 dark:text-white">Menu</span>
                 <button
                   onClick={toggleMenu}
                   className="p-2 rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-900 transition-colors"
@@ -167,16 +183,16 @@ const Navigation: React.FC = () => {
 
               {/* Mobile Menu Items */}
               <nav className="flex-1 p-6">
-                <div className="space-y-6">
+                <div className="space-y-8">
                   {navigationItems.map((item) => (
                     <a
                       key={item.id}
                       href={item.href}
                       className={`
                         block text-lg font-medium transition-colors
-                        hover:text-purple-600 dark:hover:text-purple-400
+                        hover:text-accent dark:hover:text-accent-light
                         ${activeSection === item.id
-                          ? 'text-purple-600 dark:text-purple-400'
+                          ? 'text-accent dark:text-accent-light font-semibold'
                           : 'text-neutral-600 dark:text-neutral-400'
                         }
                       `}
@@ -191,11 +207,20 @@ const Navigation: React.FC = () => {
                 </div>
               </nav>
 
-              {/* Mobile Menu Footer */}
+              {/* Mobile Menu CTA */}
               <div className="p-6 border-t border-neutral-200 dark:border-neutral-800">
-                <p className="text-sm text-neutral-500 dark:text-neutral-400">
-                  Available for freelance and consulting work
-                </p>
+                <Button
+                  variant="primary"
+                  size="md"
+                  href="#contact-cta"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection('#contact-cta');
+                  }}
+                  className="w-full font-medium"
+                >
+                  Get in touch
+                </Button>
               </div>
             </div>
           </div>
