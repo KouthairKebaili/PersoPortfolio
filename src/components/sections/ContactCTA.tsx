@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import Button from '@/components/ui/Button';
-import { ContactCTAProps } from '@/types/portfolio';
+import type { ContactCTAProps } from '@/types/portfolio';
 
 const ContactCTA: React.FC<ContactCTAProps> = ({ className = '', id = 'contact-cta' }) => {
   const [isVisible, setIsVisible] = useState(false);
