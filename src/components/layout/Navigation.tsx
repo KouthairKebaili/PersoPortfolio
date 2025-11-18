@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import Button from '@/components/ui/Button';
 import type { NavigationItem } from '@/types/portfolio';
 
 const Navigation: React.FC = () => {
