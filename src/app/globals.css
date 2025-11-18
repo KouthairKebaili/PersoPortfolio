@@ -110,56 +110,72 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-/* Apple-style utility classes */
+/* Framer-style utility classes */
 .glass-effect {
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.8);
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .dark .glass-effect {
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.8);
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .gradient-text {
-  background: var(--gradient-purple);
+  background: var(--gradient-accent);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .gradient-bg {
-  background: var(--gradient-purple);
+  background: var(--gradient-accent);
 }
 
 .gradient-bg-subtle {
-  background: var(--gradient-purple-subtle);
+  background: var(--gradient-accent-subtle);
 }
 
-/* Apple-style animation classes */
+/* Framer-style animation classes */
 .animate-fade-in {
-  animation: fadeIn 0.6s var(--ease-apple-out);
+  animation: fadeIn 0.5s var(--ease-framer-out);
 }
 
 .animate-fade-in-up {
-  animation: fadeInUp 0.6s var(--ease-apple-out);
+  animation: fadeInUp 0.6s var(--ease-framer-out);
 }
 
 .animate-slide-in-right {
-  animation: slideInRight 0.4s var(--ease-apple-out);
+  animation: slideInRight 0.4s var(--ease-framer-out);
 }
 
 .animate-scale-in {
-  animation: scaleIn 0.3s var(--ease-apple-out);
+  animation: scaleIn 0.3s var(--ease-framer-out);
 }
 
-.animate-bounce-subtle {
-  animation: bounceSubtle 2s infinite;
+.animate-slide-up {
+  animation: slideUp 0.8s var(--ease-framer-out);
 }
 
-/* Keyframes for Apple-style animations */
+.animate-stagger-1 {
+  animation-delay: 0.1s;
+}
+
+.animate-stagger-2 {
+  animation-delay: 0.2s;
+}
+
+.animate-stagger-3 {
+  animation-delay: 0.3s;
+}
+
+.animate-stagger-4 {
+  animation-delay: 0.4s;
+}
+
+/* Keyframes for Framer-style animations */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -172,7 +188,7 @@ body {
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
@@ -183,7 +199,7 @@ body {
 @keyframes slideInRight {
   from {
     opacity: 0;
-    transform: translateX(100px);
+    transform: translateX(30px);
   }
   to {
     opacity: 1;
@@ -202,15 +218,14 @@ body {
   }
 }
 
-@keyframes bounceSubtle {
-  0%, 20%, 50%, 80%, 100% {
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
     transform: translateY(0);
-  }
-  40% {
-    transform: translateY(-10px);
-  }
-  60% {
-    transform: translateY(-5px);
   }
 }
 
