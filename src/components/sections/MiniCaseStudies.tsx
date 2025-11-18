@@ -107,7 +107,9 @@ const MiniCaseStudies: React.FC<MiniCaseStudiesProps> = ({ className = '', id = 
           {studiesToDisplay.map((study, index) => (
             <div
               key={study.id}
-              ref={(el) => (itemRefs.current[index] = el)}
+              ref={(el) => {
+                itemRefs.current[index] = el;
+              }}
               data-item-index={index}
               className={`
                 p-6 lg:p-8 bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-950/20 dark:to-pink-950/20
