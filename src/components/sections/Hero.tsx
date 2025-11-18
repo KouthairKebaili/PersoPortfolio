@@ -28,130 +28,139 @@ const Hero: React.FC<HeroSectionProps> = ({ className = '', id = 'hero' }) => {
       id={id}
       className={`
         relative min-h-screen flex items-center justify-center
-        bg-gradient-to-br from-neutral-50 to-white dark:from-black dark:to-neutral-950
+        bg-white dark:bg-black
+        overflow-hidden
         ${className}
       `}
     >
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-30 dark:opacity-20">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(102,126,234,0.15)_1px,transparent_0)] [background-size:24px_24px]" />
+      {/* Background Grid Pattern */}
+      <div className="absolute inset-0">
+        <div
+          className="absolute inset-0 opacity-5 dark:opacity-10"
+          style={{
+            backgroundImage: `
+              linear-gradient(to right, #000 1px, transparent 1px),
+              linear-gradient(to bottom, #000 1px, transparent 1px)
+            `,
+            backgroundSize: '40px 40px'
+          }}
+        />
       </div>
 
       {/* Content Container */}
-      <div className="relative z-10 max-w-4xl mx-auto px-6 sm:px-8 lg:px-12 text-center">
-        {/* Main Headline */}
-        <h1
-          className={`
-            mb-6 text-4xl sm:text-5xl lg:text-6xl xl:text-7xl
-            font-bold leading-tight tracking-tight
-            text-neutral-900 dark:text-white
-            transition-all duration-1000 transform
-            ${isVisible
-              ? 'opacity-100 translate-y-0'
-              : 'opacity-0 translate-y-10'
-            }
-          `}
-          style={{ transitionDelay: '200ms' }}
-        >
-          I design clear, scalable{' '}
-          <span className="gradient-text">digital products</span>
-          <br />
-          that teams can build fast.
-        </h1>
-
-        {/* Subheading */}
-        <p
-          className={`
-            mb-12 text-lg sm:text-xl lg:text-2xl
-            leading-relaxed text-neutral-600 dark:text-neutral-400
-            max-w-3xl mx-auto
-            transition-all duration-1000 transform
-            ${isVisible
-              ? 'opacity-100 translate-y-0'
-              : 'opacity-0 translate-y-10'
-            }
-          `}
-          style={{ transitionDelay: '400ms' }}
-        >
-          Product Designer specializing in SaaS, dashboards, mobile apps, and design systems with clean dev-ready execution.
-        </p>
-
-        {/* Primary and Secondary CTAs */}
-        <div
-          className={`
-            flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6
-            transition-all duration-1000 transform
-            ${isVisible
-              ? 'opacity-100 translate-y-0'
-              : 'opacity-0 translate-y-10'
-            }
-          `}
-          style={{ transitionDelay: '600ms' }}
-        >
-          <Button
-            variant="gradient"
-            size="lg"
-            href="#featured-work"
-            onClick={(e) => {
-              e.preventDefault();
-              scrollToSection('#featured-work');
-            }}
-            className="w-full sm:w-auto px-8 py-4 text-lg shadow-xl hover:shadow-2xl"
+      <div className="relative z-10 max-w-5xl mx-auto px-6 sm:px-8 lg:px-12 text-center">
+        <div className="space-y-8 sm:space-y-12">
+          {/* Main Headline */}
+          <h1
+            className={`
+              text-display font-black text-neutral-900 dark:text-white
+              transition-all duration-700 animate-slide-up
+              ${isVisible
+                ? 'opacity-100 translate-y-0'
+                : 'opacity-0 translate-y-12'
+              }
+            `}
+            style={{ transitionDelay: '100ms' }}
           >
-            View My Work
-          </Button>
+            Design products
+            <br />
+            <span className="gradient-text">that work.</span>
+          </h1>
 
-          <Button
-            variant="outline"
-            size="lg"
-            href="#contact-cta"
-            onClick={(e) => {
-              e.preventDefault();
-              scrollToSection('#contact-cta');
-            }}
-            className="w-full sm:w-auto px-8 py-4 text-lg border-2"
+          {/* Subheading */}
+          <p
+            className={`
+              text-body text-neutral-600 dark:text-neutral-400
+              max-w-2xl mx-auto
+              transition-all duration-700 animate-slide-up
+              ${isVisible
+                ? 'opacity-100 translate-y-0'
+                : 'opacity-0 translate-y-12'
+              }
+            `}
+            style={{ transitionDelay: '200ms' }}
           >
-            Hire Me as Consultant
-          </Button>
-        </div>
+            Senior Product Designer helping SaaS companies build intuitive, scalable digital experiences that users love and teams can ship quickly.
+          </p>
 
-        {/* Scroll Indicator */}
-        <div
-          className={`
-            absolute bottom-8 left-1/2 transform -translate-x-1/2
-            transition-all duration-1000
-            ${isVisible
-              ? 'opacity-100 translate-y-0'
-              : 'opacity-0 translate-y-10'
-            }
-          `}
-          style={{ transitionDelay: '800ms' }}
-        >
-          <button
-            onClick={() => scrollToSection('#featured-work')}
-            className="p-3 rounded-full bg-white/10 hover:bg-white/20 dark:bg-black/10 dark:hover:bg-black/20 backdrop-blur-sm transition-colors group"
-            aria-label="Scroll down to view work"
+          {/* Stats/Experience Row */}
+          <div
+            className={`
+              flex flex-wrap justify-center gap-8 sm:gap-12
+              transition-all duration-700 animate-slide-up
+              ${isVisible
+                ? 'opacity-100 translate-y-0'
+                : 'opacity-0 translate-y-12'
+              }
+            `}
+            style={{ transitionDelay: '300ms' }}
           >
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="text-neutral-600 dark:text-neutral-400 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors scroll-indicator"
+            <div className="text-center">
+              <div className="text-headline font-bold text-neutral-900 dark:text-white">8+</div>
+              <div className="text-caption text-neutral-600 dark:text-neutral-400">Years Experience</div>
+            </div>
+            <div className="text-center">
+              <div className="text-headline font-bold text-neutral-900 dark:text-white">50+</div>
+              <div className="text-caption text-neutral-600 dark:text-neutral-400">Products Designed</div>
+            </div>
+            <div className="text-center">
+              <div className="text-headline font-bold text-neutral-900 dark:text-white">10M+</div>
+              <div className="text-caption text-neutral-600 dark:text-neutral-400">Users Impacted</div>
+            </div>
+          </div>
+
+          {/* Primary CTA */}
+          <div
+            className={`
+              transition-all duration-700 animate-slide-up
+              ${isVisible
+                ? 'opacity-100 translate-y-0'
+                : 'opacity-0 translate-y-12'
+              }
+            `}
+            style={{ transitionDelay: '400ms' }}
+          >
+            <Button
+              variant="gradient"
+              size="lg"
+              href="#featured-work"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection('#featured-work');
+              }}
+              className="text-lg font-semibold px-8 py-4"
             >
-              <polyline points="6 9 12 15 18 9" />
-            </svg>
-          </button>
+              View My Work
+            </Button>
+          </div>
+
+          {/* Expertise Tags */}
+          <div
+            className={`
+              flex flex-wrap justify-center gap-3
+              transition-all duration-700 animate-slide-up
+              ${isVisible
+                ? 'opacity-100 translate-y-0'
+                : 'opacity-0 translate-y-12'
+              }
+            `}
+            style={{ transitionDelay: '500ms' }}
+          >
+            {['SaaS Design', 'Design Systems', 'Mobile Apps', 'Dashboards', 'User Research', 'Prototyping'].map((skill) => (
+              <span
+                key={skill}
+                className="px-3 py-1 bg-neutral-100 dark:bg-neutral-900 text-neutral-700 dark:text-neutral-300 rounded-full text-sm font-medium"
+              >
+                {skill}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
 
-      {/* Gradient Background Accents */}
-      <div className="absolute top-1/4 left-0 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl" />
+      {/* Subtle Background Elements */}
+      <div className="absolute top-20 right-10 w-32 h-32 bg-accent/5 rounded-full blur-2xl" />
+      <div className="absolute bottom-20 left-10 w-48 h-48 bg-accent/3 rounded-full blur-3xl" />
     </section>
   );
 };
