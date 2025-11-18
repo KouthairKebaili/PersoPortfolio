@@ -2,7 +2,8 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import ProjectCard from '@/components/ui/ProjectCard';
-import { FeaturedWorkProps, Project } from '@/types/portfolio';
+import type { FeaturedWorkProps } from '@/types/portfolio';
+import { Project } from '@/types/portfolio';
 
 const FeaturedWork: React.FC<FeaturedWorkProps> = ({ className = '', id = 'featured-work', projects }) => {
   const [visibleCards, setVisibleCards] = useState<Set<number>>(new Set());
