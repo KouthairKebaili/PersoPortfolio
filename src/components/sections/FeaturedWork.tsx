@@ -10,61 +10,61 @@ const FeaturedWork: React.FC<FeaturedWorkProps> = ({ className = '', id = 'featu
   const observerRef = useRef<IntersectionObserver | null>(null);
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
 
-  // Sample projects data - replace with real project data
+  // Sample projects data based on your LinkedIn experience
   const defaultProjects: Project[] = [
     {
       id: '1',
-      title: 'SaaS Dashboard Redesign',
-      valueStatement: 'Improved onboarding conversion by 46% through streamlined user experience and data-driven design decisions.',
-      description: 'Complete redesign of a B2B SaaS analytics dashboard focusing on user onboarding and data visualization.',
+      title: 'E-commerce Platform Design System',
+      valueStatement: 'Led design system creation for multi-brand e-commerce platform, serving 10M+ users across 50+ brands globally.',
+      description: 'Comprehensive design system with component library, design tokens, and workflow documentation adopted across product teams.',
       thumbnailUrl: '',
       caseStudyUrl: '#',
-      tags: ['UI Design', 'UX Research', 'Analytics', 'SaaS'],
-      featured: true,
-      category: 'dashboard',
-      impact: {
-        metric: 'Conversion',
-        value: '+46%'
-      },
-      technologies: ['Figma', 'React', 'TypeScript'],
-      year: 2024,
-      client: 'TechCorp Inc.'
-    },
-    {
-      id: '2',
-      title: 'Property Management Platform',
-      valueStatement: 'Reduced complexity for 10k+ landlords through intuitive interface design and workflow optimization.',
-      description: 'End-to-end redesign of property management software serving over 10,000 landlords nationwide.',
-      thumbnailUrl: '',
-      caseStudyUrl: '#',
-      tags: ['Mobile App', 'Web Platform', 'Real Estate'],
-      featured: true,
-      category: 'mobile',
-      impact: {
-        metric: 'Active Users',
-        value: '10,000+'
-      },
-      technologies: ['React Native', 'Node.js', 'PostgreSQL'],
-      year: 2023,
-      client: 'PropertyPro'
-    },
-    {
-      id: '3',
-      title: 'Enterprise Design System',
-      valueStatement: 'Delivered complete system adopted by 50+ developers across multiple product lines.',
-      description: 'Comprehensive design system with components, guidelines, and documentation for enterprise-scale development.',
-      thumbnailUrl: '',
-      caseStudyUrl: '#',
-      tags: ['Design System', 'Components', 'Documentation'],
+      tags: ['Design System', 'Component Library', 'Figma', 'Design Tokens'],
       featured: true,
       category: 'design-system',
       impact: {
-        metric: 'Developer Adoption',
+        metric: 'Brands Supported',
         value: '50+'
       },
-      technologies: ['Figma', 'Storybook', 'TypeScript'],
-      year: 2024,
-      client: 'EnterpriseCorp'
+      technologies: ['Figma', 'React', 'Design Tokens'],
+      year: 2023,
+      client: 'ManoMano'
+    },
+    {
+      id: '2',
+      title: 'Sustainable Energy Platform',
+      valueStatement: 'Designed comprehensive mobile and web platform for renewable energy management across 8 European countries.',
+      description: 'End-to-end product design for B2B SaaS platform connecting energy producers with consumers through innovative marketplace.',
+      thumbnailUrl: '',
+      caseStudyUrl: '#',
+      tags: ['Mobile App', 'SaaS', 'Dashboard', 'Energy Tech'],
+      featured: true,
+      category: 'mobile',
+      impact: {
+        metric: 'Countries',
+        value: '8'
+      },
+      technologies: ['React Native', 'Figma', 'Analytics'],
+      year: 2022,
+      client: 'EkWateur'
+    },
+    {
+      id: '3',
+      title: 'Banking CX Platform',
+      valueStatement: 'Redesigned customer experience platform for major banking group, improving user satisfaction and digital adoption.',
+      description: 'Mobile-first design approach for banking services serving over 3M customers with focus on accessibility and usability.',
+      thumbnailUrl: '',
+      caseStudyUrl: '#',
+      tags: ['FinTech', 'Mobile Banking', 'CX Design', 'Accessibility'],
+      featured: true,
+      category: 'dashboard',
+      impact: {
+        metric: 'Customer Base',
+        value: '3M+'
+      },
+      technologies: ['Figma', 'Mobile Banking', 'iOS & Android'],
+      year: 2021,
+      client: 'BPCE'
     }
   ];
 
