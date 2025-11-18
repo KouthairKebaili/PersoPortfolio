@@ -25,29 +25,30 @@ const Button: React.FC<ButtonProps> = ({
 
   const variantClasses = {
     primary: `
-      bg-gradient-to-r from-purple-500 to-purple-600
+      bg-accent hover:bg-accent-dark
       text-white
-      shadow-lg hover:shadow-xl
-      hover:from-purple-600 hover:to-purple-700
+      shadow-md hover:shadow-lg
+      transition-all duration-200
     `,
     secondary: `
       bg-white dark:bg-black
-      text-purple-600 dark:text-purple-400
-      border-2 border-purple-200 dark:border-purple-800
-      hover:border-purple-300 dark:hover:border-purple-700
-      hover:bg-purple-50 dark:hover:bg-purple-950
+      text-accent dark:text-accent-light
+      border border-neutral-200 dark:border-neutral-800
+      hover:border-accent dark:hover:border-accent-light
+      hover:bg-accent/5 dark:hover:bg-accent-light/5
     `,
     gradient: `
       gradient-bg
       text-white
-      shadow-lg hover:shadow-xl
-      hover:opacity-90
+      shadow-md hover:shadow-lg
+      transition-all duration-200
     `,
     outline: `
       bg-transparent
-      text-purple-600 dark:text-purple-400
-      border-2 border-purple-500
-      hover:bg-purple-500 hover:text-white
+      text-accent dark:text-accent-light
+      border border-accent dark:border-accent-light
+      hover:bg-accent dark:hover:bg-accent-light
+      hover:text-white dark:hover:text-black
     `,
   };
 
