@@ -1,7 +1,8 @@
 'use client';
 
 import React, { useEffect, useRef, useState } from 'react';
-import { MiniCaseStudiesProps, MiniCaseStudy } from '@/types/portfolio';
+import type { MiniCaseStudiesProps } from '@/types/portfolio';
+import { MiniCaseStudy } from '@/types/portfolio';
 
 const MiniCaseStudies: React.FC<MiniCaseStudiesProps> = ({ className = '', id = 'mini-case-studies', studies }) => {
   const [visibleItems, setVisibleItems] = useState<Set<number>>(new Set());
