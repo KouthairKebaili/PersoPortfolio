@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { ProjectCardProps } from '@/types/portfolio';
+import type { ProjectCardProps } from '@/types/portfolio';
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project, className = '' }) => {
   const [isHovered, setIsHovered] = useState(false);
