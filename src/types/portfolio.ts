@@ -74,7 +74,7 @@ export interface NavigationItem {
 export interface SectionProps {
   className?: string;
   id?: string;
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }
 
 export interface HeroSectionProps extends SectionProps {}
