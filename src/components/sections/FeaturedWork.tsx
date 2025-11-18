@@ -10,61 +10,61 @@ const FeaturedWork: React.FC<FeaturedWorkProps> = ({ className = '', id = 'featu
   const observerRef = useRef<IntersectionObserver | null>(null);
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
 
-  // Sample projects data - replace with real project data
+  // Sample projects data based on your LinkedIn experience
   const defaultProjects: Project[] = [
     {
       id: '1',
-      title: 'SaaS Dashboard Redesign',
-      valueStatement: 'Improved onboarding conversion by 46% through streamlined user experience and data-driven design decisions.',
-      description: 'Complete redesign of a B2B SaaS analytics dashboard focusing on user onboarding and data visualization.',
+      title: 'E-commerce Platform Design System',
+      valueStatement: 'Led design system creation for multi-brand e-commerce platform, serving 10M+ users across 50+ brands globally.',
+      description: 'Comprehensive design system with component library, design tokens, and workflow documentation adopted across product teams.',
       thumbnailUrl: '',
       caseStudyUrl: '#',
-      tags: ['UI Design', 'UX Research', 'Analytics', 'SaaS'],
-      featured: true,
-      category: 'dashboard',
-      impact: {
-        metric: 'Conversion',
-        value: '+46%'
-      },
-      technologies: ['Figma', 'React', 'TypeScript'],
-      year: 2024,
-      client: 'TechCorp Inc.'
-    },
-    {
-      id: '2',
-      title: 'Property Management Platform',
-      valueStatement: 'Reduced complexity for 10k+ landlords through intuitive interface design and workflow optimization.',
-      description: 'End-to-end redesign of property management software serving over 10,000 landlords nationwide.',
-      thumbnailUrl: '',
-      caseStudyUrl: '#',
-      tags: ['Mobile App', 'Web Platform', 'Real Estate'],
-      featured: true,
-      category: 'mobile',
-      impact: {
-        metric: 'Active Users',
-        value: '10,000+'
-      },
-      technologies: ['React Native', 'Node.js', 'PostgreSQL'],
-      year: 2023,
-      client: 'PropertyPro'
-    },
-    {
-      id: '3',
-      title: 'Enterprise Design System',
-      valueStatement: 'Delivered complete system adopted by 50+ developers across multiple product lines.',
-      description: 'Comprehensive design system with components, guidelines, and documentation for enterprise-scale development.',
-      thumbnailUrl: '',
-      caseStudyUrl: '#',
-      tags: ['Design System', 'Components', 'Documentation'],
+      tags: ['Design System', 'Component Library', 'Figma', 'Design Tokens'],
       featured: true,
       category: 'design-system',
       impact: {
-        metric: 'Developer Adoption',
+        metric: 'Brands Supported',
         value: '50+'
       },
-      technologies: ['Figma', 'Storybook', 'TypeScript'],
-      year: 2024,
-      client: 'EnterpriseCorp'
+      technologies: ['Figma', 'React', 'Design Tokens'],
+      year: 2023,
+      client: 'ManoMano'
+    },
+    {
+      id: '2',
+      title: 'Sustainable Energy Platform',
+      valueStatement: 'Designed comprehensive mobile and web platform for renewable energy management across 8 European countries.',
+      description: 'End-to-end product design for B2B SaaS platform connecting energy producers with consumers through innovative marketplace.',
+      thumbnailUrl: '',
+      caseStudyUrl: '#',
+      tags: ['Mobile App', 'SaaS', 'Dashboard', 'Energy Tech'],
+      featured: true,
+      category: 'mobile',
+      impact: {
+        metric: 'Countries',
+        value: '8'
+      },
+      technologies: ['React Native', 'Figma', 'Analytics'],
+      year: 2022,
+      client: 'EkWateur'
+    },
+    {
+      id: '3',
+      title: 'Banking CX Platform',
+      valueStatement: 'Redesigned customer experience platform for major banking group, improving user satisfaction and digital adoption.',
+      description: 'Mobile-first design approach for banking services serving over 3M customers with focus on accessibility and usability.',
+      thumbnailUrl: '',
+      caseStudyUrl: '#',
+      tags: ['FinTech', 'Mobile Banking', 'CX Design', 'Accessibility'],
+      featured: true,
+      category: 'dashboard',
+      impact: {
+        metric: 'Customer Base',
+        value: '3M+'
+      },
+      technologies: ['Figma', 'Mobile Banking', 'iOS & Android'],
+      year: 2021,
+      client: 'BPCE'
     }
   ];
 
@@ -107,19 +107,14 @@ const FeaturedWork: React.FC<FeaturedWorkProps> = ({ className = '', id = 'featu
         ${className}
       `}
     >
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5 dark:opacity-10">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(102,126,234,0.2)_0%,transparent_50%)]" />
-      </div>
-
       <div className="relative max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
         {/* Section Header */}
-        <div className="text-center mb-16 sm:mb-20 lg:mb-24">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-900 dark:text-white mb-6">
-            Featured Work
+        <div className="text-center mb-16 sm:mb-20">
+          <h2 className="text-headline font-black text-neutral-900 dark:text-white mb-6">
+            Selected Projects
           </h2>
-          <p className="text-lg sm:text-xl text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto">
-            Showcasing SaaS and dashboard projects that deliver measurable business impact through thoughtful design.
+          <p className="text-body text-neutral-600 dark:text-neutral-400 max-w-3xl mx-auto">
+            A showcase of product design work across e-commerce, sustainable energy, and fintech that demonstrates measurable impact and scalable design solutions.
           </p>
         </div>
 
@@ -150,20 +145,20 @@ const FeaturedWork: React.FC<FeaturedWorkProps> = ({ className = '', id = 'featu
         </div>
 
         {/* View All Work CTA */}
-        <div className="text-center mt-16 sm:mt-20">
-          <p className="text-neutral-600 dark:text-neutral-400 mb-6">
-            Want to see more projects?
+        <div className="text-center mt-20">
+          <p className="text-caption text-neutral-500 dark:text-neutral-400 mb-8">
+            Available for freelance and consulting opportunities
           </p>
           <a
             href="#contact-cta"
-            className="inline-flex items-center text-purple-600 dark:text-purple-400 font-medium hover:text-purple-700 dark:hover:text-purple-300 transition-colors group"
+            className="inline-flex items-center text-accent dark:text-accent-light font-semibold hover:text-accent-dark dark:hover:text-accent transition-colors group"
             onClick={(e) => {
               e.preventDefault();
               const element = document.querySelector('#contact-cta');
               element?.scrollIntoView({ behavior: 'smooth' });
             }}
           >
-            <span>Get in touch for the full portfolio</span>
+            <span>View complete portfolio</span>
             <svg
               width="16"
               height="16"
