@@ -2,7 +2,8 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
-import { TestimonialsProps, Testimonial } from '@/types/portfolio';
+import type { TestimonialsProps } from '@/types/portfolio';
+import { Testimonial } from '@/types/portfolio';
 
 const Testimonials: React.FC<TestimonialsProps> = ({ className = '', id = 'testimonials', testimonials }) => {
   const [isVisible, setIsVisible] = useState(false);
