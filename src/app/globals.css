@@ -73,24 +73,22 @@
     --background: #000000;
     --foreground: #ffffff;
 
-    /* Dark mode purple adjustments */
-    --purple-50: #1a1a1a;
-    --purple-100: #2a2a2a;
-    --purple-500: #7c8ff9;
-    --purple-600: #6a7ce8;
-    --purple-700: #5869d7;
+    /* Dark mode accent adjustments */
+    --accent: #4D94FF;
+    --accent-light: #80B3FF;
+    --accent-dark: #0066FF;
 
-    /* Dark mode neutrals */
-    --neutral-50: #0a0a0a;
+    /* Dark mode neutrals - inverted */
+    --neutral-50: #000000;
     --neutral-100: #1a1a1a;
-    --neutral-200: #2a2a2a;
-    --neutral-300: #3a3a3a;
-    --neutral-400: #4a4a4a;
-    --neutral-500: #5a5a5a;
-    --neutral-600: #6a6a6a;
-    --neutral-700: #7a7a7a;
-    --neutral-800: #8a8a8a;
-    --neutral-900: #9a9a9a;
+    --neutral-200: #2d2d2d;
+    --neutral-300: #404040;
+    --neutral-400: #737373;
+    --neutral-500: #a6a6a6;
+    --neutral-600: #d4d4d4;
+    --neutral-700: #e5e5e5;
+    --neutral-800: #f5f5f5;
+    --neutral-900: #ffffff;
   }
 }
 
