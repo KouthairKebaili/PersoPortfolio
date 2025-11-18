@@ -127,7 +127,9 @@ const FeaturedWork: React.FC<FeaturedWorkProps> = ({ className = '', id = 'featu
           {projectsToDisplay.map((project, index) => (
             <div
               key={project.id}
-              ref={(el) => (cardRefs.current[index] = el)}
+              ref={(el) => {
+                cardRefs.current[index] = el;
+              }}
               data-card-index={index}
               className={`
                 transition-all duration-700 transform
