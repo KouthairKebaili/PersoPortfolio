@@ -3,6 +3,61 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  /* Apple-style color palette */
+  --purple-50: #faf5ff;
+  --purple-100: #f3e8ff;
+  --purple-500: #667eea;
+  --purple-600: #5a67d8;
+  --purple-700: #4c51bf;
+  --purple-900: #44337a;
+
+  /* Purple gradient for accent elements */
+  --gradient-purple: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --gradient-purple-subtle: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+
+  /* Apple-style neutrals */
+  --neutral-50: #fafafa;
+  --neutral-100: #f5f5f7;
+  --neutral-200: #e8e8ed;
+  --neutral-300: #d2d2d7;
+  --neutral-400: #aaaaaf;
+  --neutral-500: #8e8e93;
+  --neutral-600: #636366;
+  --neutral-700: #48484a;
+  --neutral-800: #3a3a3c;
+  --neutral-900: #1d1d1f;
+
+  /* Animation timing functions */
+  --ease-apple: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --ease-apple-in: cubic-bezier(0.42, 0, 1, 1);
+  --ease-apple-out: cubic-bezier(0, 0, 0.58, 1);
+  --ease-apple-in-out: cubic-bezier(0.42, 0, 0.58, 1);
+
+  /* Shadow utilities for Apple-style elevation */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-apple: 0 4px 16px 0 rgba(0, 0, 0, 0.12);
+  --shadow-apple-hover: 0 8px 32px 0 rgba(0, 0, 0, 0.16);
+
+  /* Spacing scale (8px grid system) */
+  --space-px: 1px;
+  --space-0: 0px;
+  --space-1: 0.25rem; /* 4px */
+  --space-2: 0.5rem;  /* 8px */
+  --space-3: 0.75rem; /* 12px */
+  --space-4: 1rem;    /* 16px */
+  --space-5: 1.25rem; /* 20px */
+  --space-6: 1.5rem;  /* 24px */
+  --space-8: 2rem;    /* 32px */
+  --space-10: 2.5rem; /* 40px */
+  --space-12: 3rem;   /* 48px */
+  --space-16: 4rem;   /* 64px */
+  --space-20: 5rem;   /* 80px */
+  --space-24: 6rem;   /* 96px */
+  --space-32: 8rem;   /* 128px */
 }
 
 @theme inline {
@@ -14,13 +69,216 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #000000;
+    --foreground: #ffffff;
+
+    /* Dark mode purple adjustments */
+    --purple-50: #1a1a1a;
+    --purple-100: #2a2a2a;
+    --purple-500: #7c8ff9;
+    --purple-600: #6a7ce8;
+    --purple-700: #5869d7;
+
+    /* Dark mode neutrals */
+    --neutral-50: #0a0a0a;
+    --neutral-100: #1a1a1a;
+    --neutral-200: #2a2a2a;
+    --neutral-300: #3a3a3a;
+    --neutral-400: #4a4a4a;
+    --neutral-500: #5a5a5a;
+    --neutral-600: #6a6a6a;
+    --neutral-700: #7a7a7a;
+    --neutral-800: #8a8a8a;
+    --neutral-900: #9a9a9a;
   }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Apple-style utility classes */
+.glass-effect {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dark .glass-effect {
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.gradient-text {
+  background: var(--gradient-purple);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-bg {
+  background: var(--gradient-purple);
+}
+
+.gradient-bg-subtle {
+  background: var(--gradient-purple-subtle);
+}
+
+/* Apple-style animation classes */
+.animate-fade-in {
+  animation: fadeIn 0.6s var(--ease-apple-out);
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s var(--ease-apple-out);
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.4s var(--ease-apple-out);
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.3s var(--ease-apple-out);
+}
+
+.animate-bounce-subtle {
+  animation: bounceSubtle 2s infinite;
+}
+
+/* Keyframes for Apple-style animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes bounceSubtle {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Scroll indicators */
+.scroll-indicator {
+  animation: bounceSubtle 2s infinite;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .animate-fade-in,
+  .animate-fade-in-up,
+  .animate-slide-in-right,
+  .animate-scale-in,
+  .animate-bounce-subtle {
+    animation: none;
+  }
+}
+
+/* Focus styles for accessibility */
+.focus-ring:focus {
+  outline: 2px solid var(--purple-500);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Selection styles */
+::selection {
+  background: var(--purple-100);
+  color: var(--purple-900);
+}
+
+.dark ::selection {
+  background: var(--purple-900);
+  color: var(--purple-100);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--neutral-100);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--neutral-400);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--neutral-500);
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: var(--neutral-900);
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: var(--neutral-600);
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: var(--neutral-500);
 }
