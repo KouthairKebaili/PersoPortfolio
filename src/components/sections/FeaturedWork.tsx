@@ -145,20 +145,20 @@ const FeaturedWork: React.FC<FeaturedWorkProps> = ({ className = '', id = 'featu
         </div>
 
         {/* View All Work CTA */}
-        <div className="text-center mt-16 sm:mt-20">
-          <p className="text-neutral-600 dark:text-neutral-400 mb-6">
-            Want to see more projects?
+        <div className="text-center mt-20">
+          <p className="text-caption text-neutral-500 dark:text-neutral-400 mb-8">
+            Available for freelance and consulting opportunities
           </p>
           <a
             href="#contact-cta"
-            className="inline-flex items-center text-purple-600 dark:text-purple-400 font-medium hover:text-purple-700 dark:hover:text-purple-300 transition-colors group"
+            className="inline-flex items-center text-accent dark:text-accent-light font-semibold hover:text-accent-dark dark:hover:text-accent transition-colors group"
             onClick={(e) => {
               e.preventDefault();
               const element = document.querySelector('#contact-cta');
               element?.scrollIntoView({ behavior: 'smooth' });
             }}
           >
-            <span>Get in touch for the full portfolio</span>
+            <span>View complete portfolio</span>
             <svg
               width="16"
               height="16"
