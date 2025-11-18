@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { ButtonProps } from '@/types/portfolio';
+import type { ButtonProps } from '@/types/portfolio';
 
 const Button: React.FC<ButtonProps> = ({
   children,
