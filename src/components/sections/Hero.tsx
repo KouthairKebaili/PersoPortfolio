@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import Button from '@/components/ui/Button';
-import { HeroSectionProps } from '@/types/portfolio';
+import type { HeroSectionProps } from '@/types/portfolio';
 
 const Hero: React.FC<HeroSectionProps> = ({ className = '', id = 'hero' }) => {
   const [isVisible, setIsVisible] = useState(false);
