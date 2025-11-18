@@ -1,7 +1,8 @@
 'use client';
 
 import React, { useEffect, useRef, useState } from 'react';
-import { ValuePropositionProps, ValueProposition } from '@/types/portfolio';
+import type { ValuePropositionProps } from '@/types/portfolio';
+import { ValueProposition as ValuePropositionType } from '@/types/portfolio';
 
 const ValueProposition: React.FC<ValuePropositionProps> = ({ className = '', id = 'value-proposition', services }) => {
   const [isVisible, setIsVisible] = useState(false);
