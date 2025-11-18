@@ -9,7 +9,7 @@ const ValueProposition: React.FC<ValuePropositionProps> = ({ className = '', id 
   const sectionRef = useRef<HTMLElement>(null);
 
   // Default services data
-  const defaultServices: ValueProposition[] = [
+  const defaultServices: ValuePropositionType[] = [
     {
       id: '1',
       title: 'UX decision-making based on clarity, logic, and constraints',
