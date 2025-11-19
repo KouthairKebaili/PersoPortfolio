@@ -65,17 +65,11 @@ const ValueProposition: React.FC<ValuePropositionProps> = ({ className = '', id 
       ref={sectionRef}
       id={id}
       className={`
-        relative py-24 sm:py-32 lg:py-40
-        bg-neutral-50 dark:bg-neutral-950
+        section bg-white
         ${className}
       `}
     >
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5 dark:opacity-10">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(102,126,234,0.1)_0%,transparent_50%)]" />
-      </div>
-
-      <div className="relative max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
+      <div className="container">
         {/* Section Header */}
         <div className="text-center mb-16 sm:mb-20 lg:mb-24">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-900 dark:text-white mb-6">
