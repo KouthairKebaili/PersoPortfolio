@@ -81,22 +81,32 @@ const ValueProposition: React.FC<ValuePropositionProps> = ({ className = '', id 
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+        <div className="grid-3">
           {servicesToDisplay.map((service, index) => (
             <div
               key={service.id}
               className={`
                 flex items-start space-x-4
-                transition-all duration-700 transform
+                animate-fade-in-up
                 ${isVisible
-                  ? 'opacity-100 translate-y-0'
-                  : 'opacity-0 translate-y-12'
+                  ? 'opacity-100'
+                  : 'opacity-0'
                 }
               `}
-              style={{ transitionDelay: `${index * 100}ms` }}
+              style={{
+                transitionDelay: `${index * 100}ms`,
+                transform: isVisible ? 'translateY(0)' : 'translateY(20px)'
+              }}
             >
               {/* Icon */}
-              <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg">
+              <div
+                className="flex-shrink-0 w-12 h-12 flex items-center justify-center"
+                style={{
+                  background: 'var(--accent-grad)',
+                  borderRadius: 'var(--radius-sm)',
+                  boxShadow: 'var(--shadow-card)'
+                }}
+              >
                 <svg
                   width="24"
                   height="24"
