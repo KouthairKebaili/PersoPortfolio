@@ -209,13 +209,13 @@ const Navigation: React.FC = () => {
                       key={item.id}
                       href={item.href}
                       className={`
-                        block text-lg font-medium transition-colors
-                        hover:text-accent dark:hover:text-accent-light
-                        ${activeSection === item.id
-                          ? 'text-accent dark:text-accent-light font-semibold'
-                          : 'text-neutral-600 dark:text-neutral-400'
-                        }
+                        block text-body font-medium transition-colors
+                        ${activeSection === item.id ? 'font-semibold' : ''}
                       `}
+                      style={{
+                        color: activeSection === item.id ? 'var(--accent-start)' : 'var(--text-secondary)',
+                        transition: 'color 0.3s var(--ease-in-out)'
+                      }}
                       onClick={(e) => {
                         e.preventDefault();
                         scrollToSection(item.href);
