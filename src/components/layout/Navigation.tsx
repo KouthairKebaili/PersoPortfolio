@@ -68,7 +68,7 @@ const Navigation: React.FC = () => {
           }
         `}
       >
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="container">
           <div className="flex items-center justify-between">
             {/* Logo/Name */}
             <a
