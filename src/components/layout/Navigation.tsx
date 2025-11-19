@@ -121,18 +121,16 @@ const Navigation: React.FC = () => {
 
             {/* Contact Button */}
             <div className="hidden md:block">
-              <Button
-                variant="primary"
-                size="sm"
+              <a
                 href="#contact-cta"
+                className="btn-primary"
                 onClick={(e) => {
                   e.preventDefault();
                   scrollToSection('#contact-cta');
                 }}
-                className="font-medium"
               >
                 Get in touch
-              </Button>
+              </a>
             </div>
 
             {/* Mobile Menu Button */}
