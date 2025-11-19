@@ -135,7 +135,8 @@ const Navigation: React.FC = () => {
 
             {/* Mobile Menu Button */}
             <button
-              className="md:hidden relative w-6 h-6 flex flex-col justify-center items-center text-neutral-900 dark:text-white"
+              className="md:hidden relative w-6 h-6 flex flex-col justify-center items-center"
+              style={{ color: 'var(--text-primary)' }}
               onClick={toggleMenu}
               aria-label="Toggle navigation menu"
               aria-expanded={isOpen}
