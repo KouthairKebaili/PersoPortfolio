@@ -30,11 +30,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, className = '' }) =>
             src={project.thumbnailUrl}
             alt={project.title}
             fill
-            className={`
-              object-cover
-              ${isHovered ? 'scale-103' : ''}
-            `}
-            style={{ transition: 'transform 0.3s var(--ease-in-out)' }}
+            className="object-cover"
+            style={{
+              transform: isHovered ? 'scale(1.03)' : 'scale(1)',
+              transition: 'transform 0.3s var(--ease-in-out)'
+            }}
           />
         ) : (
           <div className="absolute inset-0 flex items-center justify-center">
@@ -177,14 +177,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, className = '' }) =>
             fill="none"
             stroke="currentColor"
             strokeWidth="2"
-            className="transition-transform duration-300"
-            style={{ transform: 'translateX(0)' }}
-          />
-          <style jsx>{`
-            .group/link:hover svg {
-              transform: translateX(4px);
-            }
-          `}</style>
+            style={{
+              transition: 'transform 0.3s var(--ease-in-out)',
+              transform: isHovered ? 'translateX(4px)' : 'translateX(0)'
+            }}
+          >
+            <line x1="7" y1="17" x2="17" y2="7"></line>
+            <polyline points="7 7 17 7 17 17"></polyline>
+          </svg>
         </a>
       </div>
     </div>
