@@ -73,7 +73,11 @@ const Navigation: React.FC = () => {
             {/* Logo/Name */}
             <a
               href="#hero"
-              className="text-lg font-black text-neutral-900 dark:text-white hover:opacity-80 transition-opacity"
+              className="text-body font-semibold"
+              style={{
+                color: 'var(--text-primary)',
+                transition: 'color 0.3s var(--ease-in-out)'
+              }}
               onClick={(e) => {
                 e.preventDefault();
                 scrollToSection('#hero');
