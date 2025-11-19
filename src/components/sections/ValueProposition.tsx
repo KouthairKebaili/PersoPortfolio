@@ -112,9 +112,8 @@ const ValueProposition: React.FC<ValuePropositionProps> = ({ className = '', id 
                   height="24"
                   viewBox="0 0 24 24"
                   fill="none"
-                  stroke="currentColor"
+                  stroke="white"
                   strokeWidth="2"
-                  className="text-white"
                 >
                   {index === 0 && (
                     // Brain icon for decision-making
