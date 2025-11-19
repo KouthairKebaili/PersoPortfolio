@@ -143,21 +143,24 @@ const Navigation: React.FC = () => {
             >
               <span
                 className={`
-                  block w-full h-0.5 bg-current transition-all duration-300
+                  block w-full h-0.5 transition-all duration-300
                   ${isOpen ? 'rotate-45 translate-y-1.5' : 'translate-y-0'}
                 `}
+                style={{ backgroundColor: 'var(--text-primary)' }}
               />
               <span
                 className={`
-                  block w-full h-0.5 bg-current transition-all duration-300 my-1
+                  block w-full h-0.5 transition-all duration-300 my-1
                   ${isOpen ? 'opacity-0' : 'opacity-100'}
                 `}
+                style={{ backgroundColor: 'var(--text-primary)' }}
               />
               <span
                 className={`
-                  block w-full h-0.5 bg-current transition-all duration-300
+                  block w-full h-0.5 transition-all duration-300
                   ${isOpen ? '-rotate-45 -translate-y-1.5' : 'translate-y-0'}
                 `}
+                style={{ backgroundColor: 'var(--text-primary)' }}
               />
             </button>
           </div>
