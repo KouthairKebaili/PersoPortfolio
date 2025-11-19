@@ -228,19 +228,17 @@ const Navigation: React.FC = () => {
               </nav>
 
               {/* Mobile Menu CTA */}
-              <div className="p-6 border-t border-neutral-200 dark:border-neutral-800">
-                <Button
-                  variant="primary"
-                  size="md"
+              <div className="p-6" style={{ borderTop: '1px solid var(--text-secondary)', opacity: 0.2 }}>
+                <a
                   href="#contact-cta"
+                  className="btn-primary w-full block text-center"
                   onClick={(e) => {
                     e.preventDefault();
                     scrollToSection('#contact-cta');
                   }}
-                  className="w-full font-medium"
                 >
                   Get in touch
-                </Button>
+                </a>
               </div>
             </div>
           </div>
