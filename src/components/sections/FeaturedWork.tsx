@@ -102,24 +102,23 @@ const FeaturedWork: React.FC<FeaturedWorkProps> = ({ className = '', id = 'featu
     <section
       id={id}
       className={`
-        relative py-24 sm:py-32 lg:py-40
-        bg-white dark:bg-black
+        section bg-white
         ${className}
       `}
     >
-      <div className="relative max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
+      <div className="container">
         {/* Section Header */}
-        <div className="text-center mb-16 sm:mb-20">
-          <h2 className="text-headline font-black text-neutral-900 dark:text-white mb-6">
+        <div className="text-center mb-20">
+          <h2 className="text-section-heading mb-8">
             Selected Projects
           </h2>
-          <p className="text-body text-neutral-600 dark:text-neutral-400 max-w-3xl mx-auto">
+          <p className="text-body max-w-3xl mx-auto" style={{ color: 'var(--text-secondary)' }}>
             A showcase of product design work across e-commerce, sustainable energy, and fintech that demonstrates measurable impact and scalable design solutions.
           </p>
         </div>
 
-        {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
+        {/* Projects Grid - 3 column desktop, 2 column tablet, 1 column mobile */}
+        <div className="grid-3">
           {projectsToDisplay.map((project, index) => (
             <div
               key={project.id}
@@ -128,13 +127,13 @@ const FeaturedWork: React.FC<FeaturedWorkProps> = ({ className = '', id = 'featu
               }}
               data-card-index={index}
               className={`
-                transition-all duration-700 transform
-                ${visibleCards.has(index)
-                  ? 'opacity-100 translate-y-0'
-                  : 'opacity-0 translate-y-12'
-                }
+                animate-fade-in-up
+                ${visibleCards.has(index) ? 'opacity-100' : 'opacity-0'}
               `}
-              style={{ transitionDelay: `${index * 150}ms` }}
+              style={{
+                transitionDelay: `${index * 100}ms`,
+                transform: visibleCards.has(index) ? 'translateY(0)' : 'translateY(20px)'
+              }}
             >
               <ProjectCard
                 project={project}
@@ -146,19 +145,19 @@ const FeaturedWork: React.FC<FeaturedWorkProps> = ({ className = '', id = 'featu
 
         {/* View All Work CTA */}
         <div className="text-center mt-20">
-          <p className="text-caption text-neutral-500 dark:text-neutral-400 mb-8">
+          <p className="text-caption mb-8" style={{ color: 'var(--text-secondary)' }}>
             Available for freelance and consulting opportunities
           </p>
           <a
             href="#contact-cta"
-            className="inline-flex items-center text-accent dark:text-accent-light font-semibold hover:text-accent-dark dark:hover:text-accent transition-colors group"
+            className="btn-secondary"
             onClick={(e) => {
               e.preventDefault();
               const element = document.querySelector('#contact-cta');
               element?.scrollIntoView({ behavior: 'smooth' });
             }}
           >
-            <span>View complete portfolio</span>
+            View complete portfolio
             <svg
               width="16"
               height="16"
@@ -166,11 +165,14 @@ const FeaturedWork: React.FC<FeaturedWorkProps> = ({ className = '', id = 'featu
               fill="none"
               stroke="currentColor"
               strokeWidth="2"
-              className="ml-2 transition-transform duration-300 group-hover:translate-x-1"
-            >
-              <line x1="5" y1="12" x2="19" y2="12" />
-              <polyline points="12 5 19 12 12 19" />
-            </svg>
+              className="ml-2 transition-transform duration-300"
+              style={{ transform: 'translateX(0)' }}
+            />
+            <style jsx>{`
+              a:hover svg {
+                transform: translateX(4px);
+              }
+            `}</style>
           </a>
         </div>
       </div>
