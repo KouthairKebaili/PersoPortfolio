@@ -30,11 +30,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, className = '' }) =>
             src={project.thumbnailUrl}
             alt={project.title}
             fill
-            className={`
-              object-cover
-              ${isHovered ? 'scale-110' : ''}
-            `}
-            style={{ transition: 'transform 0.3s var(--ease-in-out)' }}
+            className="object-cover"
+            style={{
+              transform: isHovered ? 'scale(1.03)' : 'scale(1)',
+              transition: 'transform 0.3s var(--ease-in-out)'
+            }}
           />
         ) : (
           <div className="absolute inset-0 flex items-center justify-center">
