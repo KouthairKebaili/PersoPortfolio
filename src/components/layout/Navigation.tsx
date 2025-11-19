@@ -178,7 +178,10 @@ const Navigation: React.FC = () => {
           />
 
           {/* Mobile Menu Panel */}
-          <div className="fixed top-0 right-0 bottom-0 w-80 bg-white dark:bg-black z-50 md:hidden animate-slide-in-right">
+          <div
+            className="fixed top-0 right-0 bottom-0 w-80 z-50 md:hidden animate-slide-in-right"
+            style={{ backgroundColor: 'var(--bg-white)' }}
+          >
             <div className="flex flex-col h-full">
               {/* Mobile Menu Header */}
               <div className="flex items-center justify-between p-6 border-b border-neutral-200 dark:border-neutral-800">
