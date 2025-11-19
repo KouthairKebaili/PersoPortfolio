@@ -393,6 +393,113 @@ body {
   color: var(--text-secondary);
 }
 
+/* Button Specifications */
+.btn-primary {
+  background: var(--accent-grad);
+  color: white;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 0.875rem 2rem; /* 14px 32px */
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: var(--shadow-button);
+  transition: var(--transition-fast);
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 6px 16px rgba(0,0,0,0.2);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--accent-start);
+  border: 2px solid var(--accent-start);
+  border-radius: var(--radius-sm);
+  padding: 0.875rem 2rem; /* 14px 32px */
+  font-weight: 600;
+  font-size: 1rem;
+  transition: var(--transition-fast);
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.btn-secondary:hover {
+  background: var(--accent-start);
+  color: white;
+}
+
+/* Card Specifications */
+.card {
+  background: white;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-card);
+  transition: var(--transition-fast);
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.15);
+}
+
+.card-image {
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.card-image:hover {
+  transform: scale(1.03);
+  transition: var(--transition-fast);
+}
+
+/* Section Spacing */
+.section {
+  padding: var(--section-spacing-desktop) 0;
+}
+
+@media (max-width: 1023px) {
+  .section {
+    padding: var(--section-spacing-tablet) 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .section {
+    padding: var(--section-spacing-mobile) 0;
+  }
+}
+
+/* Grid System */
+.grid-12 {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--grid-gutter);
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--card-gap-h) var(--card-gap-v);
+}
+
+@media (max-width: 1023px) {
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .grid-3 {
+    grid-template-columns: 1fr;
+    gap: var(--card-gap-v);
+  }
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
