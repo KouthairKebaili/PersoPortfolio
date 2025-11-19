@@ -32,7 +32,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, className = '' }) =>
             fill
             className={`
               object-cover
-              ${isHovered ? 'scale-103' : ''}
+              ${isHovered ? 'scale-110' : ''}
             `}
             style={{ transition: 'transform 0.3s var(--ease-in-out)' }}
           />
