@@ -61,12 +61,19 @@ const Navigation: React.FC = () => {
       <nav
         className={`
           fixed top-0 left-0 right-0 z-50
-          transition-all duration-200
+          transition-all duration-300
           ${scrolled
-            ? 'bg-white/80 dark:bg-black/80 backdrop-blur-md border-b border-neutral-200/50 dark:border-neutral-800/50 py-4'
-            : 'bg-transparent py-6'
+            ? 'py-4'
+            : 'py-6'
           }
         `}
+        style={{
+          backgroundColor: scrolled ? 'rgba(255, 255, 255, 0.8)' : 'transparent',
+          backdropFilter: scrolled ? 'blur(20px)' : 'none',
+          WebkitBackdropFilter: scrolled ? 'blur(20px)' : 'none',
+          borderBottom: scrolled ? '1px solid rgba(0, 0, 0, 0.1)' : 'none',
+          transition: 'all 0.3s var(--ease-in-out)'
+        }}
       >
         <div className="container">
           <div className="flex items-center justify-between">
