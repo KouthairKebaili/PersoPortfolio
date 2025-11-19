@@ -158,10 +158,10 @@ const ValueProposition: React.FC<ValuePropositionProps> = ({ className = '', id 
 
               {/* Content */}
               <div className="flex-1">
-                <h3 className="text-lg sm:text-xl font-semibold text-neutral-900 dark:text-white mb-3">
+                <h3 className="text-body font-semibold mb-3" style={{ color: 'var(--text-primary)' }}>
                   {service.title}
                 </h3>
-                <p className="text-neutral-600 dark:text-neutral-400 leading-relaxed">
+                <p className="text-body leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
                   {service.description}
                 </p>
               </div>
