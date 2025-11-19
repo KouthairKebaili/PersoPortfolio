@@ -61,19 +61,30 @@ const Navigation: React.FC = () => {
       <nav
         className={`
           fixed top-0 left-0 right-0 z-50
-          transition-all duration-200
+          transition-all duration-300
           ${scrolled
-            ? 'bg-white/80 dark:bg-black/80 backdrop-blur-md border-b border-neutral-200/50 dark:border-neutral-800/50 py-4'
-            : 'bg-transparent py-6'
+            ? 'py-4'
+            : 'py-6'
           }
         `}
+        style={{
+          backgroundColor: scrolled ? 'rgba(255, 255, 255, 0.8)' : 'transparent',
+          backdropFilter: scrolled ? 'blur(20px)' : 'none',
+          WebkitBackdropFilter: scrolled ? 'blur(20px)' : 'none',
+          borderBottom: scrolled ? '1px solid rgba(0, 0, 0, 0.1)' : 'none',
+          transition: 'all 0.3s var(--ease-in-out)'
+        }}
       >
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="container">
           <div className="flex items-center justify-between">
             {/* Logo/Name */}
             <a
               href="#hero"
-              className="text-lg font-black text-neutral-900 dark:text-white hover:opacity-80 transition-opacity"
+              className="text-body font-semibold"
+              style={{
+                color: 'var(--text-primary)',
+                transition: 'color 0.3s var(--ease-in-out)'
+              }}
               onClick={(e) => {
                 e.preventDefault();
                 scrollToSection('#hero');
@@ -89,13 +100,16 @@ const Navigation: React.FC = () => {
                   key={item.id}
                   href={item.href}
                   className={`
-                    relative text-sm font-medium transition-all duration-200
-                    hover:text-accent dark:hover:text-accent-light
+                    relative text-caption font-medium transition-all duration-300
                     ${activeSection === item.id
-                      ? 'text-accent dark:text-accent-light font-semibold'
-                      : 'text-neutral-600 dark:text-neutral-400'
+                      ? 'font-semibold'
+                      : ''
                     }
                   `}
+                  style={{
+                    color: activeSection === item.id ? 'var(--accent-start)' : 'var(--text-secondary)',
+                    transition: 'color 0.3s var(--ease-in-out)'
+                  }}
                   onClick={(e) => {
                     e.preventDefault();
                     scrollToSection(item.href);
@@ -103,7 +117,10 @@ const Navigation: React.FC = () => {
                 >
                   {item.label}
                   {activeSection === item.id && (
-                    <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-accent dark:bg-accent-light rounded-full" />
+                    <span
+                      className="absolute -bottom-1 left-0 right-0 h-0.5 rounded-full"
+                      style={{ background: 'var(--accent-start)' }}
+                    />
                   )}
                 </a>
               ))}
@@ -111,44 +128,46 @@ const Navigation: React.FC = () => {
 
             {/* Contact Button */}
             <div className="hidden md:block">
-              <Button
-                variant="primary"
-                size="sm"
+              <a
                 href="#contact-cta"
+                className="btn-primary"
                 onClick={(e) => {
                   e.preventDefault();
                   scrollToSection('#contact-cta');
                 }}
-                className="font-medium"
               >
                 Get in touch
-              </Button>
+              </a>
             </div>
 
             {/* Mobile Menu Button */}
             <button
-              className="md:hidden relative w-6 h-6 flex flex-col justify-center items-center text-neutral-900 dark:text-white"
+              className="md:hidden relative w-6 h-6 flex flex-col justify-center items-center"
+              style={{ color: 'var(--text-primary)' }}
               onClick={toggleMenu}
               aria-label="Toggle navigation menu"
               aria-expanded={isOpen}
             >
               <span
                 className={`
-                  block w-full h-0.5 bg-current transition-all duration-300
+                  block w-full h-0.5 transition-all duration-300
                   ${isOpen ? 'rotate-45 translate-y-1.5' : 'translate-y-0'}
                 `}
+                style={{ backgroundColor: 'var(--text-primary)' }}
               />
               <span
                 className={`
-                  block w-full h-0.5 bg-current transition-all duration-300 my-1
+                  block w-full h-0.5 transition-all duration-300 my-1
                   ${isOpen ? 'opacity-0' : 'opacity-100'}
                 `}
+                style={{ backgroundColor: 'var(--text-primary)' }}
               />
               <span
                 className={`
-                  block w-full h-0.5 bg-current transition-all duration-300
+                  block w-full h-0.5 transition-all duration-300
                   ${isOpen ? '-rotate-45 -translate-y-1.5' : 'translate-y-0'}
                 `}
+                style={{ backgroundColor: 'var(--text-primary)' }}
               />
             </button>
           </div>
@@ -166,17 +185,24 @@ const Navigation: React.FC = () => {
           />
 
           {/* Mobile Menu Panel */}
-          <div className="fixed top-0 right-0 bottom-0 w-80 bg-white dark:bg-black z-50 md:hidden animate-slide-in-right">
+          <div
+            className="fixed top-0 right-0 bottom-0 w-80 z-50 md:hidden animate-slide-in-right"
+            style={{ backgroundColor: 'var(--bg-white)' }}
+          >
             <div className="flex flex-col h-full">
               {/* Mobile Menu Header */}
-              <div className="flex items-center justify-between p-6 border-b border-neutral-200 dark:border-neutral-800">
-                <span className="text-xl font-black text-neutral-900 dark:text-white">Menu</span>
+              <div className="flex items-center justify-between p-6" style={{ borderBottom: '1px solid var(--text-secondary)', opacity: 0.2 }}>
+                <span className="text-body font-semibold" style={{ color: 'var(--text-primary)' }}>Menu</span>
                 <button
                   onClick={toggleMenu}
-                  className="p-2 rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-900 transition-colors"
+                  className="p-2 rounded-lg transition-colors"
+                  style={{
+                    borderRadius: 'var(--radius-sm)',
+                    transition: 'background-color 0.3s var(--ease-in-out)'
+                  }}
                   aria-label="Close menu"
                 >
-                  <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="var(--text-primary)">
                     <path d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" />
                   </svg>
                 </button>
@@ -190,13 +216,13 @@ const Navigation: React.FC = () => {
                       key={item.id}
                       href={item.href}
                       className={`
-                        block text-lg font-medium transition-colors
-                        hover:text-accent dark:hover:text-accent-light
-                        ${activeSection === item.id
-                          ? 'text-accent dark:text-accent-light font-semibold'
-                          : 'text-neutral-600 dark:text-neutral-400'
-                        }
+                        block text-body font-medium transition-colors
+                        ${activeSection === item.id ? 'font-semibold' : ''}
                       `}
+                      style={{
+                        color: activeSection === item.id ? 'var(--accent-start)' : 'var(--text-secondary)',
+                        transition: 'color 0.3s var(--ease-in-out)'
+                      }}
                       onClick={(e) => {
                         e.preventDefault();
                         scrollToSection(item.href);
@@ -209,19 +235,17 @@ const Navigation: React.FC = () => {
               </nav>
 
               {/* Mobile Menu CTA */}
-              <div className="p-6 border-t border-neutral-200 dark:border-neutral-800">
-                <Button
-                  variant="primary"
-                  size="md"
+              <div className="p-6" style={{ borderTop: '1px solid var(--text-secondary)', opacity: 0.2 }}>
+                <a
                   href="#contact-cta"
+                  className="btn-primary w-full block text-center"
                   onClick={(e) => {
                     e.preventDefault();
                     scrollToSection('#contact-cta');
                   }}
-                  className="w-full font-medium"
                 >
                   Get in touch
-                </Button>
+                </a>
               </div>
             </div>
           </div>

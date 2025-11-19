@@ -65,52 +65,55 @@ const ValueProposition: React.FC<ValuePropositionProps> = ({ className = '', id 
       ref={sectionRef}
       id={id}
       className={`
-        relative py-24 sm:py-32 lg:py-40
-        bg-neutral-50 dark:bg-neutral-950
+        section bg-white
         ${className}
       `}
     >
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5 dark:opacity-10">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(102,126,234,0.1)_0%,transparent_50%)]" />
-      </div>
-
-      <div className="relative max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
+      <div className="container">
         {/* Section Header */}
-        <div className="text-center mb-16 sm:mb-20 lg:mb-24">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-900 dark:text-white mb-6">
+        <div className="text-center mb-20">
+          <h2 className="text-section-heading mb-8" style={{ color: 'var(--text-primary)' }}>
             I help teams ship better products with:
           </h2>
-          <p className="text-lg sm:text-xl text-neutral-600 dark:text-neutral-400 max-w-3xl mx-auto">
+          <p className="text-body max-w-3xl mx-auto" style={{ color: 'var(--text-secondary)' }}>
             A comprehensive approach to product design that combines strategic thinking with practical execution.
           </p>
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+        <div className="grid-3">
           {servicesToDisplay.map((service, index) => (
             <div
               key={service.id}
               className={`
                 flex items-start space-x-4
-                transition-all duration-700 transform
+                animate-fade-in-up
                 ${isVisible
-                  ? 'opacity-100 translate-y-0'
-                  : 'opacity-0 translate-y-12'
+                  ? 'opacity-100'
+                  : 'opacity-0'
                 }
               `}
-              style={{ transitionDelay: `${index * 100}ms` }}
+              style={{
+                transitionDelay: `${index * 100}ms`,
+                transform: isVisible ? 'translateY(0)' : 'translateY(20px)'
+              }}
             >
               {/* Icon */}
-              <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg">
+              <div
+                className="flex-shrink-0 w-12 h-12 flex items-center justify-center"
+                style={{
+                  background: 'var(--accent-grad)',
+                  borderRadius: 'var(--radius-sm)',
+                  boxShadow: 'var(--shadow-card)'
+                }}
+              >
                 <svg
                   width="24"
                   height="24"
                   viewBox="0 0 24 24"
                   fill="none"
-                  stroke="currentColor"
+                  stroke="white"
                   strokeWidth="2"
-                  className="text-white"
                 >
                   {index === 0 && (
                     // Brain icon for decision-making
@@ -155,10 +158,10 @@ const ValueProposition: React.FC<ValuePropositionProps> = ({ className = '', id 
 
               {/* Content */}
               <div className="flex-1">
-                <h3 className="text-lg sm:text-xl font-semibold text-neutral-900 dark:text-white mb-3">
+                <h3 className="text-body font-semibold mb-3" style={{ color: 'var(--text-primary)' }}>
                   {service.title}
                 </h3>
-                <p className="text-neutral-600 dark:text-neutral-400 leading-relaxed">
+                <p className="text-body leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
                   {service.description}
                 </p>
               </div>
@@ -166,29 +169,7 @@ const ValueProposition: React.FC<ValuePropositionProps> = ({ className = '', id 
           ))}
         </div>
 
-        {/* Approach Highlights */}
-        <div
-          className={`
-            mt-16 p-8 bg-white dark:bg-black rounded-2xl border border-neutral-200 dark:border-neutral-800 shadow-lg
-            transition-all duration-1000 transform
-            ${isVisible
-              ? 'opacity-100 scale-100'
-              : 'opacity-0 scale-95'
-            }
-          `}
-          style={{ transitionDelay: '600ms' }}
-        >
-          <div className="text-center">
-            <h3 className="text-2xl font-bold text-neutral-900 dark:text-white mb-4">
-              My Design Philosophy
-            </h3>
-            <p className="text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto leading-relaxed">
-              Great design isn't just about making things look beautiful—it's about solving real problems effectively.
-              I believe in creating products that are not only visually appealing but also functional, accessible, and delightful to use.
-            </p>
-          </div>
         </div>
-      </div>
     </section>
   );
 };
