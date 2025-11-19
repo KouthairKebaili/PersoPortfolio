@@ -169,29 +169,7 @@ const ValueProposition: React.FC<ValuePropositionProps> = ({ className = '', id 
           ))}
         </div>
 
-        {/* Approach Highlights */}
-        <div
-          className={`
-            mt-16 p-8 bg-white dark:bg-black rounded-2xl border border-neutral-200 dark:border-neutral-800 shadow-lg
-            transition-all duration-1000 transform
-            ${isVisible
-              ? 'opacity-100 scale-100'
-              : 'opacity-0 scale-95'
-            }
-          `}
-          style={{ transitionDelay: '600ms' }}
-        >
-          <div className="text-center">
-            <h3 className="text-2xl font-bold text-neutral-900 dark:text-white mb-4">
-              My Design Philosophy
-            </h3>
-            <p className="text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto leading-relaxed">
-              Great design isn't just about making things look beautiful—it's about solving real problems effectively.
-              I believe in creating products that are not only visually appealing but also functional, accessible, and delightful to use.
-            </p>
-          </div>
         </div>
-      </div>
     </section>
   );
 };
