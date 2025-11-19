@@ -71,11 +71,11 @@ const ValueProposition: React.FC<ValuePropositionProps> = ({ className = '', id 
     >
       <div className="container">
         {/* Section Header */}
-        <div className="text-center mb-16 sm:mb-20 lg:mb-24">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-900 dark:text-white mb-6">
+        <div className="text-center mb-20">
+          <h2 className="text-section-heading mb-8" style={{ color: 'var(--text-primary)' }}>
             I help teams ship better products with:
           </h2>
-          <p className="text-lg sm:text-xl text-neutral-600 dark:text-neutral-400 max-w-3xl mx-auto">
+          <p className="text-body max-w-3xl mx-auto" style={{ color: 'var(--text-secondary)' }}>
             A comprehensive approach to product design that combines strategic thinking with practical execution.
           </p>
         </div>
