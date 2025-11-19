@@ -184,8 +184,8 @@ const Navigation: React.FC = () => {
           >
             <div className="flex flex-col h-full">
               {/* Mobile Menu Header */}
-              <div className="flex items-center justify-between p-6 border-b border-neutral-200 dark:border-neutral-800">
-                <span className="text-xl font-black text-neutral-900 dark:text-white">Menu</span>
+              <div className="flex items-center justify-between p-6" style={{ borderBottom: '1px solid var(--text-secondary)', opacity: 0.2 }}>
+                <span className="text-body font-semibold" style={{ color: 'var(--text-primary)' }}>Menu</span>
                 <button
                   onClick={toggleMenu}
                   className="p-2 rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-900 transition-colors"
