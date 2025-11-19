@@ -110,7 +110,10 @@ const Navigation: React.FC = () => {
                 >
                   {item.label}
                   {activeSection === item.id && (
-                    <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-accent dark:bg-accent-light rounded-full" />
+                    <span
+                      className="absolute -bottom-1 left-0 right-0 h-0.5 rounded-full"
+                      style={{ background: 'var(--accent-start)' }}
+                    />
                   )}
                 </a>
               ))}
